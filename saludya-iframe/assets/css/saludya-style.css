@@ -1,0 +1,143 @@
+header img{
+  padding: 18px;
+  height: 12vh;
+  width: auto;
+  position: relative;
+}
+header{
+  background-color: white;
+}
+
+.overflow-auto{
+  overflow: auto;
+}
+
+.sy-70{
+  width:68%;
+  float: left;
+}
+.sy-30{
+  width:28%;
+  float: left;
+}
+
+.toggleShow2{
+  display: none;
+}
+
+.sy-50-50{
+  width:48%;
+  float: left;
+}
+.sy-margin-left{
+  margin-left: 4%;
+}
+
+.authentication-form .card.sy-card-mobile{
+  width: 95vw;
+}
+
+.sy-mobile-form {
+  min-height: 0px;
+  overflow: scroll;
+  background-color: white;
+}
+
+.sy-form-section{
+  overflow: auto;
+  margin-bottom: 5px;
+}
+
+.authentication-form .sy-form-section .sy-form-p{
+  width: 100%;
+}
+
+.authentication-form {
+  padding: 0px;
+  background-image: none;
+}
+
+.authentication-form .theme-form .sy-chgroup a{
+  color: #02BCF2;
+  text-decoration: underline;
+}
+.authentication-form .theme-form .sy-chgroup a:visited{
+  color: black;
+  text-decoration: underline;
+}
+
+.authentication-form .theme-form .form-group{
+  margin: 0px auto 10px auto;
+}
+
+.authentication-form .theme-form .form-control{
+   -webkit-box-shadow: none;
+  box-shadow: none;
+
+  border-radius: 5px;
+  border: 1px solid #EAEAEA;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 8px 10px;
+}
+
+.authentication-form .card{
+  border: none;
+}
+
+.authentication-form .theme-form .sy-form-label {
+  float: none;
+  color: #777777;
+  margin-bottom: 5px;
+}
+
+.authentication-form .theme-form .sy-form-group-label {
+  float: none;
+  font-weight: bold;
+}
+
+.authentication-form .theme-form .sy-form-select {
+  height: auto;
+}
+
+.authentication-form .theme-form .sy-chgroup {
+  overflow: auto;
+}
+
+.authentication-form .theme-form .sy-checkbox {
+  float: left;
+  margin-right: 10px;
+  height: 19px;
+}
+
+.authentication-form .theme-form .btn-custom { 
+  width: 100%;
+
+  margin-top: 30px;
+  padding: 7px;
+
+  text-transform: none;
+  background-color: #02BCF2;
+}
+
+.authentication-form .theme-form .btn-custom.btn-plan{
+  background-color: white;
+  color: #02BCF2;
+  border: 1px solid #02BCF2;
+  border-radius: 10px;
+  margin: 0px;
+}
+
+.authentication-form .theme-form .btn-custom.btn-back{
+  background-color: white;
+  color: #02BCF2;
+  border: 1px solid #02BCF2;
+  margin-top: 10px;
+}
+
+
+
+
+   
