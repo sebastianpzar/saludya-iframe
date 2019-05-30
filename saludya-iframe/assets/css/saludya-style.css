@@ -8,6 +8,7 @@ header{
   background-color: white;
 }
 
+
 .overflow-auto{
   overflow: auto;
 }
@@ -87,6 +88,16 @@ header{
   border: none;
 }
 
+.sy-form-label-plan{
+  margin-left: .5rem;
+  margin-top: .3rem;
+  color: #02BCF2;
+}
+
+.desactivado{
+  opacity: 0.3;
+}
+
 .authentication-form .theme-form .sy-form-label {
   float: none;
   color: #777777;
@@ -138,6 +149,19 @@ header{
 }
 
 
+/* Modal movil */
+
+.sy-flex-column{
+  flex-direction: column;
+}
+
+.sy-modal-btn{
+  width: 100%;
+
+  padding: 7px;
+
+  background-color: #02BCF2;
+}
 
 
    
