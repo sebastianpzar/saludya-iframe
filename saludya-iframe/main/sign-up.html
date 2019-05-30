@@ -1,109 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>SaludYa | Registro Seguro</title>
-    <meta charset="utf-8">
-    <meta name="author" content="pixelstrap">
-    <meta name="description" content="Tovo | App Landing Page Templates from pixelstrap">
-    <meta name="keywords" content="Tovo | App Landing Page Templates from pixelstrap">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Fav icon-->
-    <link rel="shortcut icon" href="../assets/images/favicon.png">
-    <!-- Font Family-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <!-- Font Awesome-->
-    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="../assets/css/bootstrap.css">
-    <!-- Animation CSS-->
-    <link rel="stylesheet" href="../assets/css/animate.min.css">
-    <!-- Owl carousel css-->
-    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
-    <!-- Form validation css-->
-    <link rel="stylesheet" href="../assets/css/validation.css">
-    <!-- Style css-->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Responsive css-->
-    <link rel="stylesheet" href="../assets/css/responsive.css">
-    <!-- color variation-->
-    <link id="color" rel="stylesheet" href="../assets/css/color/color-1.css" media="screen">
-    <!-- SaludYa Style css-->
-    <link rel="stylesheet" href="../assets/css/saludya-style.css">
-  </head>
-  <body>
-    <header>
-      <img class="sy-header-logo" src="../assets/images/SaludYa/logo-sy-secure@2x.png" alt="Salud Ya Logo">
-    </header>
-    <!-- Preloader-->
-    <div class="loader-wrapper">
-      <!--<div class="loader"></div>-->
-    </div>
-    <!-- Preloader end-->
-    <section class="authentication-form sy-mobile-form">
-      <!--
+
+<head>
+  <title>SaludYa | Registro Seguro</title>
+  <meta charset="utf-8">
+  <meta name="author" content="pixelstrap">
+  <meta name="description" content="Tovo | App Landing Page Templates from pixelstrap">
+  <meta name="keywords" content="Tovo | App Landing Page Templates from pixelstrap">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Fav icon-->
+  <link rel="shortcut icon" href="../assets/images/favicon.png">
+  <!-- Font Family-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="../assets/css/bootstrap.css">
+  <!-- Animation CSS-->
+  <link rel="stylesheet" href="../assets/css/animate.min.css">
+  <!-- Owl carousel css-->
+  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+  <!-- Form validation css-->
+  <link rel="stylesheet" href="../assets/css/validation.css">
+  <!-- Style css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- Responsive css-->
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <!-- color variation-->
+  <link id="color" rel="stylesheet" href="../assets/css/color/color-1.css" media="screen">
+  <!-- SaludYa Style css-->
+  <link rel="stylesheet" href="../assets/css/saludya-style.css">
+  <!-- js file-->
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <!-- bootstrap js file-->
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <!-- popper js file-->
+  <script src="../assets/js/popper.min.js"></script>
+  <!-- Owl carousel js file-->
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <!-- script js file-->
+  <script src="../assets/js/script.js"></script>
+  <!--Scripts para iframe-->
+  <script src="https://ccframe.hostedpci.com/WBSStatic/site60/proxy/js/hpci-cciframe-1.0.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="https://ccframe.hostedpci.com/WBSStatic/site60/proxy/js/jquery.ba-postmessage.2.0.0.min.js"
+    type="text/javascript" charset="utf-8"></script>
+  <script>
+    var Fields = {
+      name: '',
+      lastName: '',
+      email: '',
+      lastFour: '',
+      month: '',
+      year: '',
+      Cardholder: '',
+      token: '',
+      country: '',
+      countryId: 0,
+      plan: '',
+      PlanId: 0,
+      PlanPrice: '',
+      PlanCurrency: ''
+    }
+    var hpciCCFrameHost = "https://ccframe.hostedpci.com";
+    var hpciCCFrameFullUrl = "https://ccframe.hostedpci.com/iSynSApp/showPxyPage!ccFrame.action?pgmode1=prod&locationName=ccauto2&sid=532360&reportCCType=Y&reportCCDigits=Y&formatCCDigits=Y&enableEarlyToken=Y&formatCCDigitsDelimiter=%09&reportCVVDigits=Y&fullParentHost=http://paymentmodule-test.sa-east-1.elasticbeanstalk.com/&fullParentQStr=/";
+    var hpciCCFrameName = "ccframe";
+    var hpciSiteErrorHandler = function (errorCode, errorMsg) {
+      alert("Error procesando la tarjeta");
+    }
+    var hpciSiteSuccessHandlerV5 =
+      function (hpciMappedCCValue, hpciMappedCVVValue, hpciCCBINValue, hpciGtyTokenValue, hpciCCLast4Value, hpciGtyTokenAuthRespValue, hpciTokenRespEncrypt) {
+        var obj = {
+          Name: Fields.name,
+          LastName: Fields.lastName,
+          Country: Fields.country,
+          CountryId: Fields.countryId,
+          CellPhone: Fields.mobilePhone,
+          FormattedCellPhone: FormatPhone(Fields.mobilePhone),
+          Email: Fields.email,
+          Plan: Fields.plan,
+          PlanId: Fields.PlanId,
+          PlanPrice: Fields.PlanPrice,
+          PlanCurrency: Fields.PlanCurrency,
+          Card: {
+            Cardholder: "",
+            ExpirationMonth: "",
+            ExpirationYear: "",
+            LastFour: hpciCCLast4Value,
+            Token: hpciMappedCCValue
+          }
+        };
+        jQuery.ajax({
+          type: "POST",
+          url: 'http://core-test.bop.services/api/user',
+          data: obj,
+          dataType: 'json',
+          headers: {
+            AppId: 'BOP18_SALUDYA',
+          },
+          success: function (x, y) {
+            if (x) {
+              alert("Muchas gracias por su compra, la informacion le llegara a su correo y celular.");
+              window.location.href = "http://bopsgroup.com/";
+            } else {
+              alert("Hubo un error con la transaccion, intente de nuevo.");
+            }
+          },
+          error: function (xhr) {
+            alert("Hubo un error con la comunicacion con el servidor, revise sus conexiones e intente de nuevo.");
+          }
+        });
+      }
+
+    var hpci3DSitePINSuccessHandler = function () {
+
+    }
+    var hpci3DSitePINErrorHandler = function () {
+      //alert("Could not verify PIN for the credit card");
+      alert("Error procesando la tarjeta");
+    }
+    var hpciCCPreliminarySuccessHandlerV2 = function (hpciCCTypeValue, hpciCCBINValue, hpciCCValidValue, hpciCCLengthValue, hpciCCEnteredLengthValue) {
+      //alert("Received preliminary credit card details");
+      alert("Error procesando la tarjeta");
+    }
+    var hpciCVVPreliminarySuccessHandlerV2 = function (hpciCVVLengthValue, hpciCVVValidValue) {
+      //alert("Received preliminary CVV details");
+      alert("Error procesando la tarjeta");
+    }
+    var hpciCCDigitsSuccessHandlerV2 = function (hpciCCTypeValue, hpciCCBINValue, hpciCCValidValue, hpciCCLengthValue, hpciCCEnteredLengthValue) {
+      //alert("Received CC keypress");
+      alert("Error procesando la tarjeta");
+    }
+    var hpciCVVDigitsSuccessHandler = function (hpciCVVDigitsValue) {
+      //alert("Received CVV keypress");
+      alert("Error procesando la tarjeta");
+    }
+
+    function ChangeSelectedPlan(id, name, price, currency) {
+      Fields.plan = name;
+      Fields.PlanId = id;
+      Fields.PlanPrice = price;
+      Fields.PlanCurrency = currency;
+      $('#feature').show();
+      $("html, body").animate({
+        scrollTop: $(document).height() - $(window).height()
+      }, 600);
+      return false;
+    }
+
+    function FormatPhone(cellPhone) {
+      switch (Fields.countryId) {
+        case 1:
+          return '57' + cellPhone;
+        case 2:
+          return '593' + cellPhone;
+        case 3:
+          return '51' + cellPhone;
+      }
+    }
+
+    function sendPayment() {
+      var val = $('#phone').val();
+      if (isNullOrEmpty(val)) {
+        alert('ingrese un telefono valido con codigo de pais');
+        return false;
+      }
+      $.ajax({
+        url: "http://core-test.bop.services/api/Payment?phone=" + val,
+        type: "GET",
+        headers: {
+          AppId: 'BOP18_SALUDYA',
+        },
+        success: function (x, y) {
+          alert("Cobro enviado al sistema.");
+        },
+        error: function (xhr) {
+          alert("Error enviando cobro.");
+        }
+      });
+    }
+
+    function isNullOrEmpty(str) {
+      return str == "" || str === "" || str == '' || str === "" || str == null || str === null || str === undefined;
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <img class="sy-header-logo" src="../assets/images/SaludYa/logo-sy-secure@2x.png" alt="Salud Ya Logo">
+  </header>
+  <!-- Preloader-->
+  <div class="loader-wrapper">
+    <!--<div class="loader"></div>-->
+  </div>
+  <!-- Preloader end-->
+  <section class="authentication-form sy-mobile-form">
+    <!--
       <div class="innerpage-decor">
         <div class="innerpage-circle1"><img src="../assets/images/Testimonial2.png" alt=""></div>
         <div class="innerpage-circle2"><img src="../assets/images/Testimonial1.png" alt=""></div>
       </div>
       -->
-      <div style="height: 100%;">
-        <!--
+    <div style="height: 100%;">
+      <!--
         <h2 class="title text-center">It's Free<span> Join US</span></h2>
         <p class="text-center">Welcome to tovo, Please join us with your personal account information.</p>
         -->
-        <div class="card sy-card-mobile">
-          <form id="m_form" class="theme-form">
+      <div class="card sy-card-mobile">
+        <form id="m_form" class="theme-form">
 
-            <div id="sy-form-1">
-              <div class="sy-form-section">
-                <p class="sy-form-p">SaludYa te proporciona los mejores servicios y calidad en medicina, con un solo click.
-                    Disfruta 2 meses gratis de nuestro plan Básico y descubre nuestros beneficios.</p>
-              </div>
+          <div id="sy-form-1">
+            <div class="sy-form-section">
+              <p class="sy-form-p">SaludYa te proporciona los mejores servicios y calidad en medicina, con un solo
+                click.
+                Disfruta 2 meses gratis de nuestro plan Básico y descubre nuestros beneficios.</p>
+            </div>
 
-              <div class="sy-form-section">
-                  <label class="sy-form-group-label">EIJE TU PLAN</label>
-                  <div class="form-group overflow-auto">
-                    <div class="sy-50-50">
-                      <button class="btn btn-custom btn-plan" onclick="" type="button">SaludYa Basico</button>
-                    </div>
-                    <div class="sy-50-50 sy-margin-left">
-                      <button class="btn btn-custom btn-plan" onclick="" type="button">SaludYa Plus</button>
-                    </div>
-                  </div>
+            <div class="sy-form-section">
+              <label class="sy-form-group-label">EIJE TU PLAN</label>
+              <div class="form-group overflow-auto">
+                <div class="sy-50-50">
+                  <button class="btn btn-custom btn-plan" onclick="" type="button">SaludYa Basico</button>
+                </div>
+                <div class="sy-50-50 sy-margin-left">
+                  <button class="btn btn-custom btn-plan" onclick="" type="button">SaludYa Plus</button>
+                </div>
               </div>
+            </div>
 
-              <div class="sy-form-section">
-                  <label class="sy-form-group-label">DATOS PERSONALES</label>
-                  <div class="form-group">
-                    <label class="sy-form-label">Nombre</label>
-                    <input id="sy_m_form_nombre" class="form-control" type="text" placeholder="" required="required"> 
-                  </div>
-                  <div class="form-group">
-                      <label class="sy-form-label">Apellido</label>
-                      <input class="form-control" type="text" placeholder="" required="required"> 
-                  </div>
-                  <div class="form-group">
-                      <label class="sy-form-label">Pais de Residencia</label>
-                      <select class="form-control sy-form-select" style="padding: 10px;" name="pais" size="1" required="required">
-                          <option value="colombia">Colombia</option>
-                          <option value="ecuador">Ecuador</option>
-                          <option value="peru">Peru</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                    <label class="sy-form-label">Celular</label>
-                    <input class="form-control" type="number" placeholder="" required="required">
-                  </div>
-                  <div class="sy-chgroup">
-                    <input class="sy-checkbox" type="checkbox" id="ch-condiciones" name="ch-condiciones">  
-                    <label for="condiciones">Acepto los <a href="#">Terminos y Condiciones</a></label>
-                  </div>
+            <div class="sy-form-section">
+              <label class="sy-form-group-label">DATOS PERSONALES</label>
+              <div class="form-group">
+                <label class="sy-form-label">Nombre</label>
+                <input id="sy_m_form_nombre" class="form-control" type="text" placeholder="" required="required">
               </div>
-              
-              
-              <!--
+              <div class="form-group">
+                <label class="sy-form-label">Apellido</label>
+                <input class="form-control" type="text" placeholder="" required="required">
+              </div>
+              <div class="form-group">
+                <label class="sy-form-label">Pais de Residencia</label>
+                <select class="form-control sy-form-select" style="padding: 10px;" name="pais" size="1"
+                  required="required">
+                  <option value="colombia">Colombia</option>
+                  <option value="ecuador">Ecuador</option>
+                  <option value="peru">Peru</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="sy-form-label">Celular</label>
+                <input class="form-control" type="number" placeholder="" required="required">
+              </div>
+              <div class="sy-chgroup">
+                <input class="sy-checkbox" type="checkbox" id="ch-condiciones" name="ch-condiciones">
+                <label for="condiciones">Acepto los <a href="#">Terminos y Condiciones</a></label>
+              </div>
+            </div>
+
+
+            <!--
               <div class="form-group">
                 <input class="form-control" type="email" placeholder="email address" required="required">
               </div>
@@ -122,52 +280,53 @@
               </div>
               -->
 
-              <div class="form-button text-center">
-                  <button class="btn btn-custom" id="sy-continuar" type="button">continuar</button>
+            <div class="form-button text-center">
+              <button class="btn btn-custom" id="sy-continuar" type="button">continuar</button>
+            </div>
+          </div>
+
+
+          <div id="sy-form-2" style="display: none;">
+
+            <div class="sy-form-section">
+              <label class="sy-form-group-label">DATOS DE TARJETA</label>
+              <div class="form-group overflow-auto">
+                <div class="sy-70">
+                  <label class="sy-form-label">Numero de tarjeta</label>
+                  <input class="form-control" type="text" placeholder="" required="required">
+                </div>
+                <div class="sy-30 sy-margin-left">
+                  <label class="sy-form-label">ccv</label>
+                  <input class="form-control" type="tel" maxlength="3" size="3" placeholder="" required="required">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="sy-form-label">Nombre de titular</label>
+                <input class="form-control" type="text" placeholder="" required="required">
+              </div>
+              <div class="form-group overflow-auto">
+                <div class="sy-50-50">
+                  <label class="sy-form-label">Fecha de vencimiento</label>
+                  <input class="form-control" type="text" placeholder="" required="required">
+                </div>
+                <div class="sy-50-50 sy-margin-left">
+                  <label class="sy-form-label">&zwnj;</label>
+                  <input class="form-control" type="text" placeholder="" required="required">
+                </div>
               </div>
             </div>
-            
-            
-            <div id="sy-form-2" style="display: none;">
-                
-                <div class="sy-form-section">
-                    <label class="sy-form-group-label">DATOS DE TARJETA</label>
-                    <div class="form-group overflow-auto">
-                        <div class="sy-70">
-                            <label class="sy-form-label">Numero de tarjeta</label>
-                            <input class="form-control" type="text" placeholder="" required="required"> 
-                        </div>
-                        <div class="sy-30 sy-margin-left">
-                          <label class="sy-form-label">ccv</label>
-                          <input class="form-control" type="tel" maxlength="3" size="3" placeholder="" required="required">
-                        </div>
-                      </div>
-                    
-                    <div class="form-group">
-                        <label class="sy-form-label">Nombre de titular</label>
-                        <input class="form-control" type="text" placeholder="" required="required"> 
-                    </div>
-                    <div class="form-group overflow-auto">
-                        <div class="sy-50-50">
-                            <label class="sy-form-label">Fecha de vencimiento</label>
-                            <input class="form-control" type="text" placeholder="" required="required"> 
-                        </div>
-                        <div class="sy-50-50 sy-margin-left">
-                            <label class="sy-form-label">&zwnj;</label>
-                            <input class="form-control" type="text" placeholder="" required="required"> 
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="sy-form-section">
-                  <p class="sy-form-p sy-form-group-label">TU PLAN: SaludYa Basico - 10.000COP al mes</p>
-                  <p class="sy-form-p">Al hacer clic en el botón Iniciar Subscripción , aceptas nuestros Términos de Uso. 
-                  Puedes cancelar tu subscripción en cualquier momento. Para cancelar usa la plataforma, visita ajustes, 
-                  subscripción, cancelar suscripción.</p>
-                  <p class="sy-form-p">Tu subscripción se renovara en un mes  y se cobrará la tarifa correspondiente 
-                    (actual: 10.000 COP) a través de tu método de pago cada mes. No recibirás reembolsos ni créditos por los meses parciales.</p>
-                </div>
-                <!--
+
+            <div class="sy-form-section">
+              <p class="sy-form-p sy-form-group-label">TU PLAN: SaludYa Basico - 10.000COP al mes</p>
+              <p class="sy-form-p">Al hacer clic en el botón Iniciar Subscripción , aceptas nuestros Términos de Uso.
+                Puedes cancelar tu subscripción en cualquier momento. Para cancelar usa la plataforma, visita ajustes,
+                subscripción, cancelar suscripción.</p>
+              <p class="sy-form-p">Tu subscripción se renovara en un mes y se cobrará la tarifa correspondiente
+                (actual: 10.000 COP) a través de tu método de pago cada mes. No recibirás reembolsos ni créditos por los
+                meses parciales.</p>
+            </div>
+            <!--
                 <div class="form-group">
                   <input class="form-control" type="email" placeholder="email address" required="required">
                 </div>
@@ -185,23 +344,23 @@
                   </div><a class="text-right col-6 theme-link" href="forget-pwd.html">lost your password</a>
                 </div>
                 -->
-                <div class="form-button text-center">
-                    <button class="btn btn-custom" onclick="" type="submit">Iniciar Subscripcion</button>
-                </div>
+            <div class="form-button text-center">
+              <button class="btn btn-custom" onclick="" type="submit">Iniciar Subscripcion</button>
+            </div>
 
-                <div class="form-button text-center">
-                    <button class="btn btn-custom btn-back" id="sy-volver" type="button">Volver</button>
-                </div>
-              </div>    
-            
-            <!--
+            <div class="form-button text-center">
+              <button class="btn btn-custom btn-back" id="sy-volver" type="button">Volver</button>
+            </div>
+          </div>
+
+          <!--
             <div class="form-button text-center">
               <button class="btn btn-custom theme-color" type="submit">Sign Up</button>
             </div>
             -->
 
 
-            <!--
+          <!--
             <div class="or-saparator"><span>or</span></div>
             <h6 class="text-center mt-0 mb-3">Sign up with:</h6>
             <div class="form-button text-center social-btns">
@@ -209,74 +368,66 @@
               <button class="btn btn-custom ggl" type="submit">Google</button>
             </div>
             -->
-          </form>
-        </div>
+        </form>
       </div>
-    </section>
-    <!-- facebook chat section start-->
-    <div id="fb-root"></div>
-    <script>
-      (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- Your customer chat code-->
-    <div class="fb-customerchat" attribution="setup_tool" page_id="2123438804574660" theme_color="#18e7d3" logged_in_greeting="Hi! Welcome to PixelStrap Themes  How can we help you?" logged_out_greeting="Hi! Welcome to PixelStrap Themes  How can we help you?"></div>
-    <!-- facebook chat section end-->
-    <!-- browser code--><!--[if lt IE 9]>
-<div class="ie-warning">
-<h1>Warning!!</h1>
-<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-<div class="iew-container">
-<ul class="iew-download">
-<li>
-<a href="http://www.google.com/chrome/">
-<img src="../assets/images/browsers/chrome.png" alt="">
-<div>Chrome</div>
-</a>
-</li>
-<li>
-<a href="https://www.mozilla.org/en-US/firefox/new/">
-<img src="../assets/images/browsers/firefox.png" alt="">
-<div>Firefox</div>
-</a>
-</li>
-<li>
-<a href="http://www.opera.com">
-<img src="../assets/images/browsers/opera.png" alt="">
-<div>Opera</div>
-</a>
-</li>
-<li>
-<a href="https://www.apple.com/safari/">
-<img src="../assets/images/browsers/safari.png" alt="">
-<div>Safari</div>
-</a>
-</li>
-<li>
-<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-<img src="../assets/images/browsers/ie.png" alt="">
-<div>IE (9 & above)</div>
-</a>
-</li>
-</ul>
-</div>
-<p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-    <!-- js file-->
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
-    <!-- bootstrap js file-->
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <!-- popper js file-->
-    <script src="../assets/js/popper.min.js"></script>
-    <!-- Owl carousel js file-->
-    <script src="../assets/js/owl.carousel.min.js"></script>
-    <!-- script js file-->
-    <script src="../assets/js/script.js"></script>
-  </body>
+    </div>
+  </section>
+  <div class="row">
+    <div class="col-sm-12 mrgn-md-top">
+      <h3>Por favor llena todos los campos para finalizar tu subscripción </h3>
+    </div>
+    <div class="col-12 col-md-12 col-sm-12">
+      <form id="CCAcceptForm" method="post" class="bop-form">
+        <!--Normal Form-->
+        <div class="row">
+          <div class="col-sm-12 col-md-6 md-fgrup-margin">
+            <input class="form-control" id="name" type="text" name="fullname" placeholder="Nombre" required="required">
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <input class="form-control" id="lastName" type="text" name="lastname" placeholder="Apellido"
+              required="required">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 md-fgrup-margin">
+            <input class="form-control" id="email" type="email" name="email" placeholder="Email" required="required">
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <input class="form-control" id="mobilePhone" type="tel" name="mobilePhone" placeholder="Celular"
+              required="required">
+          </div>
+        </div>
+        <div class="hosted-container">
+          <iframe id="ccframe"
+            src="https://ccframe.hostedpci.com/iSynSApp/showPxyPage!ccFrame.action?pgmode1=prod&locationName=ccauto2&sid=532360&reportCCType=Y&reportCCDigits=Y&formatCCDigits=Y&enableEarlyToken=Y&formatCCDigitsDelimiter=%09&reportCVVDigits=Y&fullParentHost=http://paymentmodule-test.sa-east-1.elasticbeanstalk.com/&fullParentQStr=/"
+            name="ccframe" width="auto" height="auto" frameborder="0" scrolling="NO">
+            Error procesando el requerimiento, por favor actualice su navegador.
+          </iframe>
+        </div>
+        <button style="margin-top:5%;margin-bottom:5%;" type="submit" class="btn btn-custom theme-color theme-color"
+          id="sendFormButton" onClick='return sendHPCIMsg();'>Acepto</button>
+        <!--Hidden Form-->
+        <input id="ccNum" name="ccNum" type="hidden" value=" " />
+        <input id="ccCVV" name="ccCVV" type="hidden" value=" " />
+        <input id="ccBIN" name="ccBIN" type="hidden" value=" " />
+        <input name="action3DSec" type="hidden" value="verifyenroll" />
+      </form>
+      <br />
+      <div class="terms col-12 col-md-12 col-sm-12">
+        <p>
+          Al hacer clic en el botón "Iniciar suscripción" de más abajo, aceptas nuestros <a
+            href="https://s3-sa-east-1.amazonaws.com/bopsolutionsfiles/CONDICIONES+DE+USO+SALUD+YA+-+AXA+BOPs.+v04.pdf"
+            target="_blank">Términos de uso</a>. Puedes cancelar tu suscripción cuando quieras. Para cancelar, ve a
+          ajustes, suscripción, cancelar suscripción.
+        </p>
+        <p>
+          Si no la cancelas, SaludYa dará por hecho automáticamente que tu suscripción sigue en vigor y te cobrará la
+          tarifa correspondiente (actual: 10.000 COP) a través de tu método de pago cada mes. No recibirás reembolsos ni
+          créditos por los meses parciales.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
