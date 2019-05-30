@@ -157,10 +157,24 @@ header{
 
 .sy-modal-btn{
   width: 100%;
+  text-transform: none;
 
+  margin-top: 5px;
   padding: 7px;
 
   background-color: #02BCF2;
+}
+
+.sy-modal-btn-back{
+  width: 100%;
+  text-transform: none;
+
+  margin-top: 5px;
+  padding: 7px;
+
+  color: #02BCF2;
+  border: 1px solid #02BCF2;
+  background-color: white;
 }
 
 
