@@ -177,5 +177,45 @@ header{
   background-color: white;
 }
 
+.sy-modal-title{
+  text-transform: none;
+  color: #02BCF2;
+  text-align: center;
 
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.sy-modal-subtitle{
+  text-transform: none;
+}
+
+li p.sy-modal-li{
+  margin-bottom: 5px;
+  margin-left: 0px;
+
+  text-transform: none;
+}
+
+p.sy-modal-prices{
+  text-align: center;
+  color: black;
+  font-size: 14px;
+
+  margin: 15px 0px 10px 0px;;
+}
+
+.sy-chatIconBuffer{
+margin-bottom: 35px !important;
+}
    
+/* iFrame */
+.hosted-container {
+  width: 100%;
+  height: 370px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
