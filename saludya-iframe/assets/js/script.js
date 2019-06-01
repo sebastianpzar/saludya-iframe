@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
 /*----------------------------------------
-     passward show/hide
+    saludYa content display
 ----------------------------------------*/
 
     $('#sy-continuar').click(function(event){
@@ -26,7 +26,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 
     /*----------------------------------------
-     passward show hide
+     password show hide
      ----------------------------------------*/
     $('.show-hide').show();
     $('.show-hide span').addClass('show');

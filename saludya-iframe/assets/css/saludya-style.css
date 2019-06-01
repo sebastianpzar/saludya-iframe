@@ -94,9 +94,7 @@ header{
   color: #02BCF2;
 }
 
-.desactivado{
-  opacity: 0.3;
-}
+
 
 .authentication-form .theme-form .sy-form-label {
   float: none;
@@ -139,6 +137,23 @@ header{
   border: 1px solid #02BCF2;
   border-radius: 10px;
   margin: 0px;
+}
+.authentication-form .theme-form .btn-custom.btn-plan.elegido{
+  background-color: #02BCF2;
+  color: white;
+}
+.authentication-form .theme-form .btn-custom.btn-plan.desactivado{
+  opacity: 0.3;
+}
+.authentication-form .theme-form .btn-custom.btn-plan.desactivado:hover{
+  opacity: 0.3;
+  background-color: white;
+  color: #02BCF2;
+}
+.authentication-form .theme-form .btn-custom.btn-plan:hover{
+  background-color: #02BCF2;
+  color: white;
+
 }
 
 .authentication-form .theme-form .btn-custom.btn-back{
@@ -219,3 +234,6 @@ iframe {
   width: 100%;
   height: 100%;
 }
+
+
+

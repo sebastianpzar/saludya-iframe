@@ -239,8 +239,8 @@
             </ul>
           </div>
           <div class="modal-footer sy-flex-column">
-            <button type="button" class="btn btn-custom sy-modal-btn">Elegir Familiar</button>
-            <button type="button" class="btn btn-custom sy-modal-btn">Elegir Individual</button>
+            <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Basico','Familiar')" data-dismiss="modal">Elegir Familiar</button>
+            <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Basico','Individual')" data-dismiss="modal">Elegir Individual</button>
             <button type="button" class="btn btn-custom sy-modal-btn-back" data-dismiss="modal">Volver</button>
             <p class="sy-modal-prices">
               Tarifa Individual por mes: <span style="font-weight: bold">$11.400 COP</span><br>Tarifa Familiar por mes: <span style="font-weight: bold">$15.600 COP</span>
@@ -302,8 +302,8 @@
             </ul>
           </div>
           <div class="modal-footer sy-flex-column">
-            <button type="button" class="btn btn-custom sy-modal-btn">Elegir Familiar</button>
-            <button type="button" class="btn btn-custom sy-modal-btn">Elegir Individual</button>
+            <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Basico','Familiar')" data-dismiss="modal">Elegir Familiar</button>
+            <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Basico','Individual')" data-dismiss="modal">Elegir Individual</button>
             <button type="button" class="btn btn-custom sy-modal-btn-back" data-dismiss="modal">Volver</button>
             <p class="sy-modal-prices">
               Tarifa Individual por mes: <span style="font-weight: bold">$3.50 USD</span><br>Tarifa Familiar por mes: <span style="font-weight: bold">$4.50 USD</span>
@@ -363,8 +363,8 @@
             </ul>
           </div>
           <div class="modal-footer sy-flex-column">
-            <button type="button" class="btn btn-custom sy-modal-btn">Elegir Familiar</button>
-            <button type="button" class="btn btn-custom sy-modal-btn">Elegir Individual</button>
+            <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Plus','Familiar')" data-dismiss="modal">Elegir Familiar</button>
+            <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Plus','Individual')" data-dismiss="modal">Elegir Individual</button>
             <button type="button" class="btn btn-custom sy-modal-btn-back" data-dismiss="modal">Volver</button>
             <p class="sy-modal-prices">
               Tarifa Individual por mes: <span style="font-weight: bold">$4.00 USD</span><br>Tarifa Familiar por mes: <span style="font-weight: bold">$5.50 USD</span>
@@ -425,8 +425,8 @@
           </ul>
          </div>
          <div class="modal-footer sy-flex-column">
-           <button type="button" class="btn btn-custom sy-modal-btn">Elegir Familiar</button>
-           <button type="button" class="btn btn-custom sy-modal-btn">Elegir Individual</button>
+           <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Basico','Familiar')" data-dismiss="modal">Elegir Familiar</button>
+           <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Basico','Individual')" data-dismiss="modal">Elegir Individual</button>
            <button type="button" class="btn btn-custom sy-modal-btn-back" data-dismiss="modal">Volver</button>
            <p class="sy-modal-prices">
              Tarifa Individual por mes: <span style="font-weight: bold">$12 PEN</span><br>Tarifa Familiar por mes: <span style="font-weight: bold">$17 PEN</span>
@@ -486,8 +486,8 @@
            </ul>
          </div>
          <div class="modal-footer sy-flex-column">
-           <button type="button" class="btn btn-custom sy-modal-btn">Elegir Familiar</button>
-           <button type="button" class="btn btn-custom sy-modal-btn">Elegir Individual</button>
+           <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Plus','Familiar')" data-dismiss="modal">Elegir Familiar</button>
+           <button type="button" class="btn btn-custom sy-modal-btn" onclick="setPlan('Plus','Individual')" data-dismiss="modal">Elegir Individual</button>
            <button type="button" class="btn btn-custom sy-modal-btn-back" data-dismiss="modal">Volver</button>
            <p class="sy-modal-prices">
              Tarifa Individual por mes: <span style="font-weight: bold">$15 PEN</span><br>Tarifa Familiar por mes: <span style="font-weight: bold">$19 PEN</span>
@@ -527,14 +527,14 @@
                     data-toggle="modal" data-target="">
                     SaludYa Basico
                   </button>
-                  <label id="tuPlanBasico" class="sy-form-label-plan">Plan: Individual</label>
+                  <label id="tuPlanBasico" class="sy-form-label-plan"></label>
                 </div>
                 <div class="sy-50-50 sy-margin-left">
                   <button id="btn-elijePlus" class="btn btn-custom btn-plan desactivado" type="button" class="btn btn-primary" data-toggle="modal"
                     data-target="">
                     SaludYa Plus
                   </button>
-                  <label id="tuPlanBasico" class="sy-form-label-plan">Plan: Individual</label>
+                  <label id="tuPlanPlus" class="sy-form-label-plan"></label>
                 </div>
               </div>
             </div>
@@ -545,7 +545,7 @@
               <input class="sy-checkbox" type="checkbox" id="ch-condiciones" name="ch-condiciones">
               <label for="condiciones">Acepto los <a href="#">Terminos y Condiciones</a></label>
             </div>
-            <button class="btn btn-custom" id="sy-continuar" type="button">continuar</button>
+            <button class="btn btn-custom desactivado" id="sy-continuar" type="button">continuar</button>
           </div>
         </div>
 
@@ -622,12 +622,6 @@
           </div>
         </div>
 
-        <form id="m_form" class="theme-form">
-          <div id="sy-form-2" style="display: none;">
-            <div class="sy-form-section">
-            </div>
-        </form>
-
       </div>
     </div>
   </section>
@@ -640,31 +634,63 @@
     $('#select-pais').change(function() {
       var value = $(this).val();
       console.log(value);
+      
+      $('#btn-elijeBasico').removeClass("elegido");
+      $('#btn-elijePlus').removeClass("elegido");
+
+
+      $('#tuPlanBasico').text("");
+      $('#tuPlanPlus').text("");
 
       if(value == "1"){
         $('#btn-elijeBasico').attr('data-target','#colBasicoModal');
-        //$('#btn-elijeBasico').attr('disabled','enabled');
+        $('#btn-elijeBasico').removeClass("desactivado");
 
-        //$('#btn-elijePlus').attr('disabled','disabled');
+        $('#btn-elijePlus').attr('data-target','');
+        $('#btn-elijePlus').addClass("desactivado");
       }else if(value == "2"){
         $('#btn-elijeBasico').attr('data-target','#ecuBasicoModal');
-        //$('#btn-elijeBasico').attr('disabled','enabled');
+        $('#btn-elijeBasico').removeClass("desactivado");
 
         $('#btn-elijePlus').attr('data-target','#ecuPlusModal');
-        //$('#btn-elijePlus').attr('disabled','enabled');
+        $('#btn-elijePlus').removeClass("desactivado");
       }
       else if(value == "3"){
         $('#btn-elijeBasico').attr('data-target','#perBasicoModal');
-        //$('#btn-elijeBasico').attr('disabled','enabled');
+        $('#btn-elijeBasico').removeClass("desactivado");
 
         $('#btn-elijePlus').attr('data-target','#perPlusModal');
-        //$('#btn-elijePlus').attr('disabled','enabled');
+        $('#btn-elijePlus').removeClass("desactivado");
       }
       else{
         
       }
       
     });
+
+    function setPlan(btn, plan){
+      if(btn == "Basico"){
+        $('#tuPlanBasico').text("Plan: " + plan);
+        $('#tuPlanPlus').text("");
+
+        $('#btn-elijeBasico').addClass("elegido");
+        $('#btn-elijePlus').removeClass("elegido");
+      }else if(btn == "Plus"){
+        $('#tuPlanPlus').text("Plan: " + plan);
+        $('#tuPlanBasico').text("");
+
+        $('#btn-elijeBasico').removeClass("elegido");
+        $('#btn-elijePlus').addClass("elegido");
+      }    
+    }
+
+    $("#ch-condiciones").click(function() {
+      $("#sy-continuar").toggleClass("desactivado")
+    });
+  
+  </script>
+
+  <script>
   
   </script>
 </body>
