@@ -7,14 +7,12 @@ $(document).ready(function(){
 ----------------------------------------*/
 
     $('#sy-continuar').click(function(event){
-        if(!this.checkValidity())
-        {
-
-        }
-        else{
+        if ($('#ch-condiciones').is(':checked')) {
             $("#sy-form-1").toggle(0);
             $("#sy-form-2").toggle(0);
         }
+        
+        
     });
 
     $("#sy-volver").click(function(){

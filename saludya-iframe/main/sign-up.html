@@ -197,6 +197,78 @@
     <!--<div class="loader"></div>-->
   </div>
   <!-- Preloader end-->
+  <section class="sy-desktop-section">
+    <div class="row" style="height: 100%;">
+      <div class="col-lg-1 col-md-0"></div>
+      <div class="col-lg-5 col-md-6 sy-desk-intro-col">
+          <div class="about-contain">
+            <div>
+              <h2 class="title">una mejor forma de cuidar de <span>tu salud</span></h2>
+              <p id="sy-desk-caption" class="caption-about">
+                  SaludYa te proporciona los mejores servicios y calidad en medicina, con un solo click. Disfruta 2 meses gratis de nuestro plan Básico y descubre nuestros beneficios.
+              </p>
+              <div class="row sm-mb">
+                <div class="col-6">
+                  <ul class="about-style">
+                    <li class="abt-hover">
+                      <div class="about-icon">
+                        <div class="icon-hover">
+                          <img style="max-height: 110%;" src="../assets/images/icon/lock-solid.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="about-text">
+                        <h3>Seguro</h3>
+                      </div>
+                    </li>
+                    <li class="abt-hover">
+                      <div class="about-icon">
+                        <div class="icon-hover">
+                          <img style="max-height: 110%;" src="../assets/images/icon/sort-alpha-down-solid.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="about-text">
+                        <h3>Facil de usar</h3>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="about-style">
+                    <li class="abt-hover">
+                      <div class="about-icon">
+                        <div class="icon-hover">
+                          <img style="max-height: 110%;" src="../assets/images/icon/clipboard-list-solid.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="about-text">
+                        <h3>Integral</h3>
+                      </div>
+                    </li>
+                    <li class="abt-hover">
+                      <div class="about-icon">
+                        <div class="icon-hover">
+                          <img style="max-height: 110%;" src="../assets/images/icon/bolt-solid.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="about-text">
+                        <h3>Veloz</h3>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-6 col-md-6 sy-desk-intro-col">
+        <video class="sy-video" autoplay loop muted poster="../assets/image/SaludYa/poster.png" style="max-height: 100%;">
+          <source src="../assets/video/slider-caption.mp4" type="video/mp4">
+        </video>
+        <!--<img class="float-right sy-desk-img" data-tilt="" data-tilt-perspective="110" data-tilt-speed="400" data-tilt-max="1.2" src="../assets/images/slider-caption.png" alt="slider-caption">-->
+      </div>
+    </div>
+  </section>
+
   <section class="authentication-form sy-mobile-form">
 
     <!-- MODAL COL-Basico -->
@@ -498,132 +570,139 @@
      </div>
    </div>
    <!-- MODAL -->
-
-    <div style="height: 100%;">
-      <div class="card sy-card-mobile">
-
-        <div id="sy-form-1" class="theme-form">
-          <div class="sy-form-section">
-            <p class="sy-form-p">SaludYa te proporciona los mejores servicios y calidad en medicina, con un solo click.
-              Disfruta 2 meses gratis de nuestro plan Básico y descubre nuestros beneficios.</p>
-          </div>
-
-          <div class="sy-form-section">
-            <div class="form-group">
-              <label class="sy-form-group-label">PAIS DE RESIDENCIA</label>
-              <select id="select-pais" class="form-control sy-form-select" style="padding: 10px;" name="pais" size="1"
-                required="required">
-                <option disabled selected value> -- elije una opcion -- </option>
-                <option value="1">Colombia</option>
-                <option value="2">Ecuador</option>
-                <option value="3">Peru</option>
-              </select>
-            </div>
-            <div class="sy-form-section">
-              <label class="sy-form-group-label">EIJE TU PLAN</label>
-              <div class="form-group overflow-auto">
-                <div class="sy-50-50">
-                  <button id="btn-elijeBasico" class="btn btn-custom btn-plan desactivado" type="button" class="btn btn-primary"
-                    data-toggle="modal" data-target="">
-                    SaludYa Basico
-                  </button>
-                  <label id="tuPlanBasico" class="sy-form-label-plan"></label>
+      <div id="sy-mobile-row"class="row">
+        <div class="col-0 col-sm-2"></div>
+        <div class="col-12 col-sm-8">
+          <div style="height: 100%;">
+              <div class="card sy-card-mobile">
+      
+                <div id="sy-form-1" class="theme-form">
+                  <div class="sy-form-section">
+                    <p id="sy-mobile-caption" class="sy-form-p">SaludYa te proporciona los mejores servicios y calidad en medicina, con un solo click.
+                      Disfruta 2 meses gratis de nuestro plan Básico y descubre nuestros beneficios.</p>
+                  </div>
+      
+                  <div class="sy-form-section">
+                    <div class="form-group">
+                      <label class="sy-form-group-label">PAIS DE RESIDENCIA</label>
+                      <select id="select-pais" class="form-control sy-form-select" style="padding: 10px;" name="pais" size="1"
+                        required="required">
+                        <option disabled selected value> -- elije una opcion -- </option>
+                        <option value="1">Colombia</option>
+                        <option value="2">Ecuador</option>
+                        <option value="3">Peru</option>
+                      </select>
+                    </div>
+                    <div class="sy-form-section">
+                      <label class="sy-form-group-label">ELIJE TU PLAN</label>
+                      <div class="form-group overflow-auto">
+                        <div class="sy-50-50">
+                          <button id="btn-elijeBasico" class="btn btn-custom btn-plan desactivado" type="button" class="btn btn-primary"
+                            data-toggle="modal" data-target="">
+                            SaludYa Basico
+                          </button>
+                          <label id="tuPlanBasico" class="sy-form-label-plan"></label>
+                        </div>
+                        <div class="sy-50-50 sy-margin-left">
+                          <button id="btn-elijePlus" class="btn btn-custom btn-plan desactivado" type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="">
+                            SaludYa Plus
+                          </button>
+                          <label id="tuPlanPlus" class="sy-form-label-plan"></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="form-button text-center">
+                    <div class="sy-chgroup">
+                      <input id="ch-condiciones" class="sy-checkbox" type="checkbox" name="ch-condiciones">
+                      <label for="condiciones">Acepto los <a href="#">Terminos y Condiciones</a></label>
+                    </div>
+                    <button class="btn btn-custom desactivado" id="sy-continuar" type="button">continuar</button>
+                  </div>
                 </div>
-                <div class="sy-50-50 sy-margin-left">
-                  <button id="btn-elijePlus" class="btn btn-custom btn-plan desactivado" type="button" class="btn btn-primary" data-toggle="modal"
-                    data-target="">
-                    SaludYa Plus
-                  </button>
-                  <label id="tuPlanPlus" class="sy-form-label-plan"></label>
+      
+                <div class="row" id="sy-form-2" style="display: none;">
+                  <div class="col-12 col-md-12 col-sm-12">
+                    <form id="CCAcceptForm" method="post" class="theme-form">
+                      <!--Normal Form-->
+                      <div class="row">
+                        <div class="col">
+                          <label class="sy-form-group-label">DATOS PERSONALES</label>
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label class="sy-form-label">Nombre</label>
+                          <input class="form-control" id="name" type="text" name="fullname" placeholder="" required="required">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                          <label class="sy-form-label">Apellido</label>
+                          <input class="form-control" id="lastName" type="text" name="lastname" placeholder=""
+                            required="required">
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label class="sy-form-label">Email</label>
+                          <input class="form-control" id="email" type="email" name="email" placeholder="" required="required">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                          <label class="sy-form-label">Celular</label>
+                          <input class="form-control" id="mobilePhone" type="tel" name="mobilePhone" placeholder=""
+                            required="required">
+                        </div>
+                      </div>
+      
+                      <div class="hosted-container">
+                        <iframe id="ccframe"
+                          src="https://ccframe.hostedpci.com/iSynSApp/showPxyPage!ccFrame.action?pgmode1=prod&locationName=ccauto2&sid=532360&reportCCType=Y&reportCCDigits=Y&formatCCDigits=Y&enableEarlyToken=Y&formatCCDigitsDelimiter=%09&reportCVVDigits=Y&fullParentHost=http://paymentmodule-test.sa-east-1.elasticbeanstalk.com/&fullParentQStr=/"
+                          name="ccframe" width="auto" height="auto" frameborder="0" scrolling="NO">
+                          Error procesando el requerimiento, por favor actualice su navegador.
+                        </iframe>
+                      </div>
+      
+                      <div class="sy-form-section">
+                        <p class="sy-form-p">Al hacer clic en el botón Iniciar Subscripción , aceptas nuestros <a
+                            href="https://s3-sa-east-1.amazonaws.com/bopsolutionsfiles/CONDICIONES+DE+USO+SALUD+YA+-+AXA+BOPs.+v04.pdf"
+                            target="_blank">Términos de uso</a>.
+                          Puedes cancelar tu subscripción en cualquier momento. Para cancelar usa la plataforma, visita ajustes,
+                          subscripción, cancelar suscripción.</p>
+                        <p class="sy-form-p">Tu subscripción se renovara en un mes y se cobrará la tarifa correspondiente
+                          (actual: 10.000 COP) a través de tu método de pago cada mes. No recibirás reembolsos ni créditos por
+                          los meses parciales.</p>
+                      </div>
+      
+                      <div class="form-button text-center">
+                        <button class="btn btn-custom" id="sendFormButton" onClick='return sendHPCIMsg();' type="submit">Iniciar
+                          Subscripcion</button>
+                      </div>
+      
+                      <div class="form-button text-center sy-chatIconBuffer">
+                        <button class="btn btn-custom btn-back" id="sy-volver" type="button">Volver</button>
+                      </div>
+      
+                      <!--Hidden Form-->
+                      <input id="ccNum" name="ccNum" type="hidden" value=" " />
+                      <input id="ccCVV" name="ccCVV" type="hidden" value=" " />
+                      <input id="ccBIN" name="ccBIN" type="hidden" value=" " />
+                      <input name="action3DSec" type="hidden" value="verifyenroll" />
+                    </form>
+                    <br />
+      
+                  </div>
                 </div>
+      
               </div>
             </div>
           </div>
-
-          <div class="form-button text-center">
-            <div class="sy-chgroup">
-              <input class="sy-checkbox" type="checkbox" id="ch-condiciones" name="ch-condiciones">
-              <label for="condiciones">Acepto los <a href="#">Terminos y Condiciones</a></label>
-            </div>
-            <button class="btn btn-custom desactivado" id="sy-continuar" type="button">continuar</button>
-          </div>
+          <div class="col-0 col-sm-2"></div>
+            
         </div>
-
-        <div class="row" id="sy-form-2" style="display: none;">
-          <div class="col-12 col-md-12 col-sm-12">
-            <form id="CCAcceptForm" method="post" class="theme-form">
-              <!--Normal Form-->
-              <div class="row">
-                <div class="col">
-                  <label class="sy-form-group-label">DATOS PERSONALES</label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <label class="sy-form-label">Nombre</label>
-                  <input class="form-control" id="name" type="text" name="fullname" placeholder="" required="required">
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <label class="sy-form-label">Apellido</label>
-                  <input class="form-control" id="lastName" type="text" name="lastname" placeholder=""
-                    required="required">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <label class="sy-form-label">Email</label>
-                  <input class="form-control" id="email" type="email" name="email" placeholder="" required="required">
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <label class="sy-form-label">Celular</label>
-                  <input class="form-control" id="mobilePhone" type="tel" name="mobilePhone" placeholder=""
-                    required="required">
-                </div>
-              </div>
-
-              <div class="hosted-container">
-                <iframe id="ccframe"
-                  src="https://ccframe.hostedpci.com/iSynSApp/showPxyPage!ccFrame.action?pgmode1=prod&locationName=ccauto2&sid=532360&reportCCType=Y&reportCCDigits=Y&formatCCDigits=Y&enableEarlyToken=Y&formatCCDigitsDelimiter=%09&reportCVVDigits=Y&fullParentHost=http://paymentmodule-test.sa-east-1.elasticbeanstalk.com/&fullParentQStr=/"
-                  name="ccframe" width="auto" height="auto" frameborder="0" scrolling="NO">
-                  Error procesando el requerimiento, por favor actualice su navegador.
-                </iframe>
-              </div>
-
-              <div class="sy-form-section">
-                <p class="sy-form-p">Al hacer clic en el botón Iniciar Subscripción , aceptas nuestros <a
-                    href="https://s3-sa-east-1.amazonaws.com/bopsolutionsfiles/CONDICIONES+DE+USO+SALUD+YA+-+AXA+BOPs.+v04.pdf"
-                    target="_blank">Términos de uso</a>.
-                  Puedes cancelar tu subscripción en cualquier momento. Para cancelar usa la plataforma, visita ajustes,
-                  subscripción, cancelar suscripción.</p>
-                <p class="sy-form-p">Tu subscripción se renovara en un mes y se cobrará la tarifa correspondiente
-                  (actual: 10.000 COP) a través de tu método de pago cada mes. No recibirás reembolsos ni créditos por
-                  los meses parciales.</p>
-              </div>
-
-              <div class="form-button text-center">
-                <button class="btn btn-custom" id="sendFormButton" onClick='return sendHPCIMsg();' type="submit">Iniciar
-                  Subscripcion</button>
-              </div>
-
-              <div class="form-button text-center sy-chatIconBuffer">
-                <button class="btn btn-custom btn-back" id="sy-volver" type="button">Volver</button>
-              </div>
-
-              <!--Hidden Form-->
-              <input id="ccNum" name="ccNum" type="hidden" value=" " />
-              <input id="ccCVV" name="ccCVV" type="hidden" value=" " />
-              <input id="ccBIN" name="ccBIN" type="hidden" value=" " />
-              <input name="action3DSec" type="hidden" value="verifyenroll" />
-            </form>
-            <br />
-
-          </div>
-        </div>
-
-      </div>
-    </div>
+  
   </section>
   <!-- Start of bopsgroup Zendesk Widget script -->
   <script id="ze-snippet"
