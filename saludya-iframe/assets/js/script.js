@@ -1,25 +1,103 @@
 "use strict";
 
+var validPlan = false; // plan is selected or not
 
 $(document).ready(function(){
 /*----------------------------------------
     saludYa content display
 ----------------------------------------*/
 
-    $('#sy-continuar').click(function(event){
-        if ($('#ch-condiciones').is(':checked')) {
-            $("#sy-form-1").toggle(0);
+    /* change page on pg1 */
+    $('#sy-continuar').click(function(event){  
+        var paisSelect = $('#select-pais');
+        if (paisSelect['0'].value !== "" && validPlan){
+           $("#sy-form-1").toggle(0);
             $("#sy-form-2").toggle(0);
         }
-        
-        
     });
 
+    /* change page on pg2 */
     $("#sy-volver").click(function(){
       $("#sy-form-1").toggle(0);
       $("#sy-form-2").toggle(0);
     });
+
+    $("#ch-condiciones").click(function() {
+        $("#sendFormButton").toggleClass("desactivado")
+      });
+
+    /* button styling */
+    // $('#select-pais').change(function() {
+    //     if($(this)['0'].value !== ""){ 
+    //         $("#sy-continuar").removeClass("desactivado");
+    //     }else{
+    //         $("#sy-continuar").addClass("desactivado");
+    //     }
+    // });
+
+    /*saludYa modal display*/
+    $('#select-pais').change(function() {
+        var value = $(this).val();
+        console.log(value);
+        
+        $('#btn-elijeBasico').removeClass("elegido");
+        $('#btn-elijePlus').removeClass("elegido");
+  
+  
+        $('#tuPlanBasico').text("");
+        $('#tuPlanPlus').text("");
+  
+        if(value == "1"){
+          $('#btn-elijeBasico').attr('data-target','#colBasicoModal');
+          $('#btn-elijeBasico').removeClass("desactivado");
+  
+          $('#btn-elijePlus').attr('data-target','');
+          $('#btn-elijePlus').addClass("desactivado");
+        }else if(value == "2"){
+          $('#btn-elijeBasico').attr('data-target','#ecuBasicoModal');
+          $('#btn-elijeBasico').removeClass("desactivado");
+  
+          $('#btn-elijePlus').attr('data-target','#ecuPlusModal');
+          $('#btn-elijePlus').removeClass("desactivado");
+        }
+        else if(value == "3"){
+          $('#btn-elijeBasico').attr('data-target','#perBasicoModal');
+          $('#btn-elijeBasico').removeClass("desactivado");
+  
+          $('#btn-elijePlus').attr('data-target','#perPlusModal');
+          $('#btn-elijePlus').removeClass("desactivado");
+        }
+        else{  
+
+        }
+      });
 });
+
+/*saludYa plan label display*/
+function setPlan(btn, plan){
+    if(btn == "Basico"){
+        $('#tuPlanBasico').text("Plan: " + plan);
+        $('#tuPlanPlus').text("");
+
+        $('#btn-elijeBasico').addClass("elegido");
+        $('#btn-elijePlus').removeClass("elegido");
+    }else if(btn == "Plus"){
+        $('#tuPlanPlus').text("Plan: " + plan);
+        $('#tuPlanBasico').text("");
+
+        $('#btn-elijeBasico').removeClass("elegido");
+        $('#btn-elijePlus').addClass("elegido");
+    }  
+    validPlan = true;
+
+    var paisSelect = $('#select-pais');
+    if (paisSelect['0'].value !== ""){ 
+        $("#sy-continuar").removeClass("desactivado");
+    }  
+}
+
+    
+
 
 $(document).ready(function(){
 

@@ -199,8 +199,8 @@
   <!-- Preloader end-->
   <section class="sy-desktop-section">
     <div class="row" style="height: 100%;">
-      <div class="col-lg-1 col-md-0"></div>
-      <div class="col-lg-5 col-md-6 sy-desk-intro-col">
+      <div class="col-xl-1 col-md-0"></div>
+      <div class="col-xl-5 col-md-6 sy-desk-intro-col">
           <div class="about-contain">
             <div>
               <h2 class="title">una mejor forma de cuidar de <span>tu salud</span></h2>
@@ -260,7 +260,7 @@
             </div>
           </div>
       </div>
-      <div class="col-lg-6 col-md-6 sy-desk-intro-col">
+      <div class="col-xl-6 col-md-6 sy-desk-intro-col">
         <video class="sy-video" autoplay loop muted poster="../assets/images/SaludYa/poster.png" style="max-height: 100%;">
           <source src="../assets/video/slider-caption.mp4" type="video/mp4">
         </video>
@@ -571,8 +571,8 @@
    </div>
    <!-- MODAL -->
       <div id="sy-mobile-row"class="row">
-        <div class="col-0 col-sm-2"></div>
-        <div class="col-12 col-sm-8">
+        <div class="col-0 col-sm-1 col-lg-2 col-xl-3"></div>
+        <div class="col-12 col-sm-10 col-lg-8 col-xl-6">
           <div style="height: 100%;">
               <div class="card sy-card-mobile">
       
@@ -587,7 +587,7 @@
                       <label class="sy-form-group-label">PAIS DE RESIDENCIA</label>
                       <select id="select-pais" class="form-control sy-form-select" style="padding: 10px;" name="pais" size="1"
                         required="required">
-                        <option disabled selected value> -- elije una opcion -- </option>
+                        <option disabled selected value=""> -- elije una opcion -- </option>
                         <option value="1">Colombia</option>
                         <option value="2">Ecuador</option>
                         <option value="3">Peru</option>
@@ -615,10 +615,6 @@
                   </div>
       
                   <div class="form-button text-center">
-                    <div class="sy-chgroup">
-                      <input id="ch-condiciones" class="sy-checkbox" type="checkbox" name="ch-condiciones">
-                      <label for="condiciones">Acepto los <a href="#">Terminos y Condiciones</a></label>
-                    </div>
                     <button class="btn btn-custom desactivado" id="sy-continuar" type="button">continuar</button>
                   </div>
                 </div>
@@ -646,11 +642,11 @@
                       </div>
       
                       <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-6 ">
                           <label class="sy-form-label">Email</label>
                           <input class="form-control" id="email" type="email" name="email" placeholder="" required="required">
                         </div>
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-6 ">
                           <label class="sy-form-label">Celular</label>
                           <input class="form-control" id="mobilePhone" type="tel" name="mobilePhone" placeholder=""
                             required="required">
@@ -677,7 +673,11 @@
                       </div>
       
                       <div class="form-button text-center">
-                        <button class="btn btn-custom" id="sendFormButton" onClick='return sendHPCIMsg();' type="submit">Iniciar
+                        <div class="sy-chgroup">
+                          <input id="ch-condiciones" class="sy-checkbox" type="checkbox" name="ch-condiciones">
+                          <label for="condiciones">Acepto los <a href="#">Terminos y Condiciones</a></label>
+                        </div>
+                        <button class="btn btn-custom desactivado" id="sendFormButton" onClick='return sendHPCIMsg();' type="submit">Iniciar
                           Subscripcion</button>
                       </div>
       
@@ -699,7 +699,7 @@
               </div>
             </div>
           </div>
-          <div class="col-0 col-sm-2"></div>
+          <div class="col-0 col-sm-1 col-lg-2 col-xl-3"></div>
             
         </div>
   
@@ -710,62 +710,7 @@
   <!-- End of bopsgroup Zendesk Widget script -->
 
   <script>
-    $('#select-pais').change(function() {
-      var value = $(this).val();
-      console.log(value);
-      
-      $('#btn-elijeBasico').removeClass("elegido");
-      $('#btn-elijePlus').removeClass("elegido");
-
-
-      $('#tuPlanBasico').text("");
-      $('#tuPlanPlus').text("");
-
-      if(value == "1"){
-        $('#btn-elijeBasico').attr('data-target','#colBasicoModal');
-        $('#btn-elijeBasico').removeClass("desactivado");
-
-        $('#btn-elijePlus').attr('data-target','');
-        $('#btn-elijePlus').addClass("desactivado");
-      }else if(value == "2"){
-        $('#btn-elijeBasico').attr('data-target','#ecuBasicoModal');
-        $('#btn-elijeBasico').removeClass("desactivado");
-
-        $('#btn-elijePlus').attr('data-target','#ecuPlusModal');
-        $('#btn-elijePlus').removeClass("desactivado");
-      }
-      else if(value == "3"){
-        $('#btn-elijeBasico').attr('data-target','#perBasicoModal');
-        $('#btn-elijeBasico').removeClass("desactivado");
-
-        $('#btn-elijePlus').attr('data-target','#perPlusModal');
-        $('#btn-elijePlus').removeClass("desactivado");
-      }
-      else{
-        
-      }
-      
-    });
-
-    function setPlan(btn, plan){
-      if(btn == "Basico"){
-        $('#tuPlanBasico').text("Plan: " + plan);
-        $('#tuPlanPlus').text("");
-
-        $('#btn-elijeBasico').addClass("elegido");
-        $('#btn-elijePlus').removeClass("elegido");
-      }else if(btn == "Plus"){
-        $('#tuPlanPlus').text("Plan: " + plan);
-        $('#tuPlanBasico').text("");
-
-        $('#btn-elijeBasico').removeClass("elegido");
-        $('#btn-elijePlus').addClass("elegido");
-      }    
-    }
-
-    $("#ch-condiciones").click(function() {
-      $("#sy-continuar").toggleClass("desactivado")
-    });
+    
   
   </script>
 
