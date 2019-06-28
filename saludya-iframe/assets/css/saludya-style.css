@@ -1,7 +1,9 @@
 .theme-form .form-control {
   font-size: 16px;
 }
-
+.padding-right{
+  padding-right: 0px;
+}
 .col, .col-12, .col-md-12, .col-sm-12{
   padding-left: 0;
   padding-right: 0;
@@ -312,6 +314,12 @@ section.sy-desktop-section{
   header img {
     height: 14vh;
     min-height: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .padding-right{
+    padding-right: 15px;
   }
 }
 
